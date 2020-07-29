@@ -6,5 +6,6 @@
         },
         "editor.suggest.insertMode": "replace",
         "emmet.includeLanguages":{"edge":"html"}
-    }
+    },
+    "edge.format.enable": true
 }
