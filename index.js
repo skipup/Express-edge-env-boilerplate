@@ -1,11 +1,18 @@
 import express from 'express';
 import Router from './router';
 import {config,engine} from 'express-edge';
+import mongoose, { mongo } from 'mongoose';
 const app = express();
 
 //## setup dotenv
 import dotenv from 'dotenv';
 dotenv.config();
+
+//## Setting up mongodb
+mongoose.connect(process.env.mongo_url,{useNewUrlParser:true,useUnifiedTopology:true},(e,client)=>{
+    if(e) return e;
+    console.log('Mongo Connection Success')
+})
 
 //## Static File
 app.use(express.static(__dirname+'/public'));
