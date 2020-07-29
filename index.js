@@ -7,6 +7,9 @@ const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
 
+//## Static File
+app.use(express.static(__dirname+'/public'));
+
 //##    Setup edge template engine
 app.use(engine)
 app.set('views',__dirname+'/views')
